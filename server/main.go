@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
@@ -10,7 +11,7 @@ import (
 type item struct {
 	ID       string  `json:"id" binding:"required"`
 	Name     string  `json:"name" binding:"required"`
-	Count    int     `json:"Count" binding:"required"`
+	Count    int     `json:"count" binding:"required"`
 	Price    float64 `json:"price"`
 	Location string  `json:"location"`
 	Mass     int     `json:"mass"`
@@ -26,6 +27,8 @@ var items = []item{
 func main() {
 	router := gin.Default()
 
+	router.Use(cors.Default())
+
 	api := router.Group("/api")
 	{
 		api.GET("/items", getItems)
@@ -35,7 +38,7 @@ func main() {
 		api.PUT("items/:id", updateItem)
 	}
 
-	router.Use(static.Serve("/", static.LocalFile("./views", true)))
+	router.Use(static.Serve("/", static.LocalFile("../client/build", true)))
 
 	// Start and run the server
 	router.Run(":8080")
