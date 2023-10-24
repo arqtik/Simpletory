@@ -5,8 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
 
 import App from './App';
-import Root, { loader as rootLoader } from './routes/Root'
-import Inventory from './routes/Inventory';
+import Root from './routes/Root'
+import Inventory, { loader as inventoryLoader } from './routes/Inventory';
 import Item from './routes/Item';
 import Scan from './routes/Scan';
 
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    loader: rootLoader,
     children: [
       {
         path: "inventory",
-        element: <Inventory />
+        element: <Inventory />,
+        loader: inventoryLoader
       },
       {
         path: "item/:id",
