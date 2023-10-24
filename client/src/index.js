@@ -24,10 +24,10 @@ const router = createBrowserRouter([
       {
         path: "inventory",
         element: <Inventory />,
-        loader: inventoryLoader
+        loader: inventoryLoader,
       },
       {
-        path: "item/:id",
+        path: "inventory/item/:id",
         element: <Item />
       },
       {
