@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
 import Root, { loader as rootLoader } from './routes/Root'
 import Inventory from './routes/Inventory';
+import Item from './routes/Item';
 import Scan from './routes/Scan';
 
 import {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "inventory",
         element: <Inventory />
+      },
+      {
+        path: "item/:id",
+        element: <Item />
       },
       {
         path: "scan",
