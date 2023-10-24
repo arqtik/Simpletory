@@ -22,6 +22,7 @@ var items = []item{
 	{ID: "0845678901001", Name: "Perfume", Count: 1, Price: 699.99, Location: "Shelf 1", Mass: 50, Unit: "ml"},
 	{ID: "0345672901036", Name: "Cologne", Count: 3, Price: 459.99, Location: "Shelf 2", Mass: 24, Unit: "ml"},
 	{ID: "0145632902029", Name: "Hairspray", Count: 10, Price: 25, Location: "Shelf 3", Mass: 100, Unit: "ml"},
+	{ID: "0145632902082", Name: "Necklace", Count: 4, Price: 1500, Location: "", Mass: 0, Unit: ""},
 }
 
 func main() {
