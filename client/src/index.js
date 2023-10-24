@@ -1,14 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
+
+import App from './App';
+import Root from './routes/Root'
+import Inventory from './routes/Inventory';
+import Scan from './routes/Scan';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "inventory",
+        element: <Inventory />
+      },
+      {
+        path: "scan",
+        element: <Scan />
+      }
+    ]
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
