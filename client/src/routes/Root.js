@@ -1,15 +1,6 @@
-import { Outlet, Link, useLoaderData } from "react-router-dom";
-import Scan from "./Scan";
-
-import { getItems } from "../items";
-
-export async function loader(){
-    const items = await getItems();
-    return { items };
-}
+import { Outlet, Link } from "react-router-dom";
 
 export default function Root(){
-    const {items} = useLoaderData();
 
     return(
         <div className="container-fluid">
