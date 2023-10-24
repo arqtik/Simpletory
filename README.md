@@ -1,0 +1,2 @@
+# Simpletory
+ Simple inventory app
