@@ -1,7 +1,3 @@
-import localforage from "localforage";
-import { matchSorter } from "match-sorter";
-import sortBy from "sort-by";
-
 const api = "http://127.0.0.1:8080/api/";
 
 export async function getItems() {
